@@ -1,0 +1,227 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+void hello();
+void ageAndNameAndCountry();
+void menu();
+void MinMaxAvg();
+void EvenNumber();
+void grade();
+void powOfTwo();
+void squareRoot();
+
+int main() {
+
+	menu();
+
+	system("pause");
+	return 0;
+}
+
+void hello() {
+
+	printf("Hello world!\n");
+}
+
+void ageAndNameAndCountry() {
+
+	char yourName[20];
+	int yourAge;
+	char yourCountry[20];
+
+	printf("insert your name please ?\n");
+	scanf("%s", &yourName);
+
+	printf("How old are you ?\n");
+	scanf("%d", &yourAge);
+
+	printf("Where do you live ?\n");
+	scanf("%s", &yourCountry);
+
+	printf("Hello %s, you are %d years old and you live in %s\n", yourName, yourAge, yourCountry);
+	puts(" ");
+}
+
+void MinMaxAvg() {
+	int a, b, c;
+	float Avg = 0;
+	printf("please insert the first number\n");
+	scanf("%d", &a);
+	printf("please insert the second number\n");
+	scanf("%d", &b);
+	printf("please insert the third number");
+	scanf("%d", &c);
+	if (a > b && a > c) {
+		printf("%d is Max number\n", a);
+	}
+	else if (b > a && b > c) {
+		printf("%d is a Max number\n", b);
+	}
+	else {
+		printf("%d is a Max number\n", c);
+	}
+	 if (a < b && a < c) {
+		printf("%d is a Min number\n", a);
+	 }
+	 else if (b < a && b < c) {
+		 printf("%d is a Min number\n", b);
+	 }
+	 else {
+		 printf("%d is a Min number\n", c);
+	 }
+
+	 Avg = (a + b + c) / 3;
+	 printf("The avrage is %.2f\n", Avg);
+	
+}
+
+void EvenNumber() {
+	
+	int e, f;
+
+	printf("please insert the first number\n");
+	scanf("%d", &e);
+	printf("please insert the second number\n");
+	scanf("%d", &f);
+	
+	int sum = 0;
+
+	if (e % 2 == 0) {
+		for (int i = e; i <= f; i += 2)
+		{
+
+			printf("%d\n", i);
+			sum = sum + i;
+		}
+
+		printf("%d\n", sum);
+	}
+	else
+	{
+		e += 1;
+		for (int i = e; i <= f; i += 2)
+		{
+			sum = sum + i;
+			printf("%d\n", i);
+		}
+
+		printf("your total number between %d and %d is %d\n", e, f, sum);
+
+	}
+	
+
+}
+
+void grade() {
+
+	int a, b, c;
+	float overall = 0;
+
+	printf("please insert your first grade\n");
+	scanf("%d", &a);
+	printf("please insert your second grade\n");
+	scanf("%d", &b);
+	printf("please insert your third grade\n");
+	scanf("%d", &c);
+
+	overall = (a + b + c) / 3;
+	
+
+	printf("your overall is %.2f\n", overall);
+
+	if (overall >= 60) {
+
+		printf("approved !\n");
+	}
+	else {
+		printf("failed !\n");
+	}
+
+
+}
+
+void powOfTwo() {
+	
+	int a;
+	
+	printf("please insert the number\n");
+	scanf("%d", &a);
+
+	printf("%.2f\n", pow(a, 2));
+
+}
+
+void squareRoot() {
+
+	int a;
+
+	printf("please insert the number");
+	scanf("%d", &a);
+
+	printf("%.2f\n", sqrt(a));
+
+
+
+}
+
+void menu() {
+	
+	int userInput;
+
+	printf("____________________________________\n");
+	printf("hi welcome to the menu !\n");
+	printf("1- Hello World\n");
+	printf("2- Age, Name and your country\n");
+	printf("3- Max, Min, Avg\n");
+	printf("4- Even numbers\n");
+	printf("5- Grade\n");
+	printf("6- Power of two\n");
+	printf("7- calculate square root\n");
+	printf("0- Exit\n");
+	printf("____________________________________");
+	scanf("%d", &userInput);
+
+	switch (userInput)
+	{
+	case 1:
+		hello();
+		menu();
+		break;
+	case 2:
+		ageAndNameAndCountry();
+		menu();
+	case 3:
+		MinMaxAvg();
+		menu();
+		break;
+	case 4:
+		EvenNumber();
+		menu();
+		break;
+	case 5:
+		grade();
+		menu();
+		break;
+	case 6:
+		powOfTwo();
+		menu();
+		break;
+	case 7:
+		squareRoot();
+		menu();
+		break;
+
+	case 0:
+		printf("bye\n");
+
+
+	default:
+		printf("invalide number\n");
+		break;
+	}
+}
+
+
+
