@@ -1,0 +1,150 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h> // This is the library to use bool
+#include <math.h> // This is the library to use for some math calculation
+
+void rain();
+void Hello();
+void drunk();
+void stupid();
+void menu();
+void bye();
+void menu2();
+
+int main() {
+
+	//----------------------------- THIS PART IS RELATED TO THE BOOL -------------------------
+
+	_Bool standardBool = 1; //C standard includes the datatype _Bool with values
+
+	printf("This is standard Bool defined as true %d\n", standardBool);
+
+	bool libraryStandard = false; 
+	printf("This is a standard bool defined as false %d\n", libraryStandard);
+
+	//------------------------------- SOME EXAMPLE OF MATH -----------------------------
+	printf("%.2f\n", sqrt(900));
+
+	printf("%.2f\n", pow(4, 2));
+
+	printf("%.2f\n", cbrt(27));
+
+	printf("%.2f\n", ceil(9.1));
+
+	printf("%.2f\n", floor(9.9));
+
+	//--------------------------------- THE PART THE MY FUNCTION RUN IN THE MAIN -----------------
+
+	rain();
+	
+	menu2();
+
+		system("pause");
+
+	return 0;
+}
+
+//----------------------------------------- IF STATMENT EXAMPLE ------------------------
+
+void rain() {
+
+	int input;
+	
+		printf("Is it rainning outside ?\n");
+		printf("1- Yes\n");
+		printf("2- No\n");
+		printf("3- I'm in a vancouver\n");
+
+		scanf("%d", &input);
+		if (input == 1) {
+			printf("Take your umbrella\n");
+
+		}
+		else if (input == 2) {
+			printf("Don't take your umbrella \n");
+			rain();
+		}
+		
+	
+		else if (input == 3) {
+			printf("always take your umbrella \n");
+			rain();
+		}
+		else {
+			printf("Dude are you drunk ??!!!! \n");
+			rain();
+		
+	}
+}
+   
+//-------------------------------- SWITCH EXAMPLE --------------------------------
+
+void Hello() {
+
+	printf("Hello and welcome world\n");
+
+}
+
+void drunk() {
+	
+	printf("Drunk people doing so many silly thing try to not be drunk in your important meeting\n");
+
+}
+
+void stupid() {
+
+	printf("well for this part i don't have nothing to say but why do you choose that ?? :)))\n");
+
+
+}
+
+void menu() {
+	int userInput;
+	printf("welcome to my stupid world, here is my menu hope to enjoy it... ");
+	printf("\n1-this is for Heelo part...\n");
+	printf("2-This is an drunk part....\n");
+	printf("3- This is for a stupid part...\n");
+	printf("4-I don't wanna be rude so this part is goodbye...");
+	scanf("%d", &userInput);
+}
+
+void bye() {
+
+	printf("Take care bye\n");
+}
+
+void menu2() {
+
+	int userInput;
+
+
+	printf("welcome to my stupid world, here is my menu hope to enjoy it... ");
+	printf("\n1-this is for Heelo part...\n");
+	printf("2-This is an drunk part....\n");
+	printf("3- This is for a stupid part...\n");
+	printf("4-I don't wanna be rude so this part is goodbye...\n");
+	scanf("%d", &userInput);
+
+
+
+	switch (userInput)
+	{
+	case 1:
+		Hello();
+		menu();
+		
+	case 2:
+		drunk();
+		menu();
+
+	case 3:
+		stupid();
+		menu();
+	case 4:
+		bye();
+		break;
+	default:printf("Invalid selection please try agian...\n");
+		break;
+	}
+}
