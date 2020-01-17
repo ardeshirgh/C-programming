@@ -1,0 +1,7 @@
+﻿  Main.c
+c:\users\ardeshir.ghorbani\desktop\assignment 2\assignment 2\main.c(26): warning C4778: 'printf' : unterminated format string '%t'
+c:\users\ardeshir.ghorbani\desktop\assignment 2\assignment 2\main.c(29): warning C4778: 'printf' : unterminated format string '%t'
+c:\users\ardeshir.ghorbani\desktop\assignment 2\assignment 2\main.c(35): warning C4778: 'printf' : unterminated format string '%t'
+c:\users\ardeshir.ghorbani\desktop\assignment 2\assignment 2\main.c(38): warning C4778: 'printf' : unterminated format string '%t'
+c:\users\ardeshir.ghorbani\desktop\assignment 2\assignment 2\main.c(51): warning C4098: 'fibo': 'void' function returning a value
+  Assignment 2.vcxproj -> C:\Users\ardeshir.ghorbani\Desktop\Assignment 2\Debug\Assignment 2.exe
