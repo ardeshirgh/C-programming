@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SIZE 10
+
+int main()
+{
+
+
+	//MULTI DIMENSIONAL ARRAY = Datatype ArrayName [ROWS] [COLUMNS]
+	// int myArray [2] [3] 
+
+
+
+
+
+	// 00 01 02 10 11 12 
+	int array1[2][3] = { { 1, 2, 3 },{ 4, 5, 6 } };
+
+	// 00 01 02 10 11 12
+	int array2[2][3] = { 1, 2, 3, 4, 5, 6 };
+
+	// 00 01 10 the rest is 0
+	int array3[2][3] = { { 1, 2 },{ 4 } };
+
+	// all 0
+	int array4[2][3] = { 0 };
+
+	int array5[10][5];
+	int init = 1;
+
+
+
+
+
+
+	// initilize 2 d array with 1-50
+	for (size_t i = 0; i < 10; i++)
+	{
+		for (size_t j = 0; j < 5; j++)
+		{
+			array5[i][j] = init;
+			init += 1;
+		}
+	}
+	//print 2 d array with labels
+	printf(" %10s %10s %10s %10s %10s\n", "Column1", "Column2", "Column3", "Column4", "Column5");
+
+	for (size_t i = 0; i < 10; i++)
+	{
+		printf("Row %d", i);
+
+		for (size_t j = 0; j < 5; j++)
+		{
+
+			printf("%10d", array5[i][j]);
+
+		}
+		puts("");
+	}
+	puts("");
+
+
+	int array6[50];
+	init = 1;
+	//initialize one d array with 1 - 50
+	for (size_t i = 0; i < 50; i++)
+	{
+		array6[i] = init;
+		init += 1;
+	}
+	//print one d array 
+	for (size_t i = 0; i < 50; i++)
+	{
+		if (i % 5 == 0 && i != 0)
+			puts("");
+		printf("%d\t", array6[i]);
+
+	}
+
+	system("pause");
+	return 0;
+}
+
