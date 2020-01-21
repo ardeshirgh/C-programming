@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//group 1 - 
+/*typedef struct Hero HeroPtr;*/ // typedef is the keyword to define how you want to call your structure - This is like an prototype
+
+typedef struct Hero { // Here you define your structure name
+
+char name[6]; //These are your structure elements 
+int HP;
+double speed;
+
+
+}HeroPtr; // This is your structure type definition
+
+//group 2
+
+struct Fighter { // This way you can't create the type definition so every time you call your object you'll need to say "struct Name"
+
+char name[6];
+int HP;
+double speed;
+struct Fighter * hptr;
+
+};
+
+
+
+int main() {
+
+//for group 1
+HeroPtr a; //This is how you declare an object using typedef
+//for group 2
+struct Fighter fighter1;// This is how you declare without typedef.
+
+HeroPtr Andre;
+Andre.HP = 100;
+
+printf("Andre's Health is %d\n", Andre.HP);
+
+struct Fighter Saygin;
+Saygin.HP = 100;
+
+printf("Saygin's Health is %d\n", Saygin.HP);
+
+
+
+getc(stdin); //This is an alternative for the system("pause")
+return 0;
+}
