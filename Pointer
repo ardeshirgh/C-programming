@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void doubleThevalueByValue(int value) {
+value *= 2;
+}
+
+void doubleThevalueByReference(int *value) {
+*value *= 2;
+}
+
+int main() {
+
+int a = 100;
+//printf("%p", &a);
+
+
+int *aptr = &a;
+
+printf("%p\n", aptr);//This will return the address
+printf("%d\n", *aptr);//This will return the value
+printf("%d\n", *&a);//This will return the
+printf("%d\n", *&*&*&*&*&*&*&a);//This is returning the value, the "&*" is called dereferencing
+
+
+
+int y = 9;
+doubleThevalueByValue(y); //This function will perform the calculations based on the value passed to it
+
+int z = 9;
+doubleThevalueByReference(&z);// This function will look into a location on RAM and pass any value that is stored inside.
+
+printf("\n%d\n", y);
+printf("\n%d\n\n", z);
+
+
+int myArray[5] = { 10,20,30,40,50 };
+//Array acts like a pointer that point to a serie of values in sequence locations
+printf("%p\n", myArray);//00EFF8D0 its the Hexadecimal address for the first array address
+printf("%d\n", myArray[0]);//10 That's the value of the first element
+printf("%p\n", &myArray[1]);//00EFF8D4 its the Hexadecimal address for the second array address THIS VALUE IS 4 BYTES MORE THAN THE PREVIOUS BECAUSE THE INT HAS 32 bits SIZE(4 Byte = 32 Bits / 2^4)
+printf("%d\n", *(myArray+4));//That's the value for the index [4]
+
+
+
+
+system("pause");
+return 0;
+}
+
+double something(double *a, double *b) {
+return *a**b; //This is A Times B, *a(Value on a location) * (times) *b(value on b location) 
+}
