@@ -1,0 +1,65 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+
+
+
+
+int main1() {
+
+puts("Puts is a PrintF that goes automatically to the next line, without using \\n, but it only accepts strings, no variables");
+
+int number;
+printf("%zu\n", sizeof(number)); //How much space a int takes inside RAM
+
+
+
+//int* pData = (int*)calloc(4, sizeof(int)); // This is an alternative, it takes to arguments and the difference is that this one initialize all the elements as 0(zero)
+//printf("%d\n", *pData);
+
+
+
+//sizeof(int) - This is the amount of sapce[block] that you need to 'book' inside the memory to receive an integer
+//sizeof(int) *4 - If you want to store 4 integers, so you multiply this block 4 times
+//malloc(sizeof(int) *4) - malloc means Memory Allocation, it's a built in function to allocate space in memory
+//malloc(sizeof(int) * 4); - the sizeof((int) *4) is the argument for the malloc function, that says we need 4 blocks to store data.
+//(int*)malloc(sizeof(int) * 4); - after you define the amount of space you need to define the data type that the function will return, that's why we include (int*) in front of it. The default is a void*.
+
+int * myPtr = (int*)malloc(sizeof(int) * 4);
+*myPtr = 100;
+
+printf("%d\n", *myPtr);
+
+*(myPtr + 1) = 200;
+*(myPtr + 2) = 300;
+*(myPtr + 3) = 400;
+
+printf("First item %d, Second item %d \n", *myPtr,*(myPtr+1));
+
+printf("%d\n", *(myPtr + 4)); //This is pointing to a random Memory slot, because our blocks goes from 0 to 3(4 blocks), if you try to Print a random memory slot you could receive an error if this slot is being used by another application.
+
+
+//*****************LOOPS TO ITERATE THE LIST******************************
+
+
+for (int i = 0; i < 4; i++)
+{
+printf("This is my element inside the List %d\n", *(myPtr + i));
+puts("Next");
+}
+
+
+printf("My pointer after the first loop %d\n",*myPtr); //The First Loop increments our counter i, not the pointer itself.
+
+for (int i = 0; i < 4; i++)
+{
+printf("This is my element inside the List %d\n", *(myPtr)); 
+myPtr += 1;
+}
+
+printf("My pointer after the second loop %d\n",*myPtr);//The second loop increment the pointer position, that's why after the lopp it will be pointing to block 4, outside the list.
+
+
+system("pause");
+return 0;
+}
