@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Hero {
+
+	char heroName[20];
+	unsigned int ATT;
+	unsigned int DEF;
+	unsigned int HP;
+
+
+}Hero;
+
+Hero * newHero(char heroName[20], unsigned int attack, unsigned int deffence, unsigned int HP) {
+	Hero * heroPtr = (Hero*)malloc(sizeof(Hero));
+
+	strcpy(heroPtr->heroName, heroName);
+	
+	heroPtr->ATT = attack;
+	heroPtr->HP = HP;
+	heroPtr->DEF = deffence;
+
+	return heroPtr;
+}
+
+void printHero(Hero *hero);
+
+
+int main()
+{
+
+	Hero * Warrior = newHero("Prince of Persia", 100, 50, 100);
+
+
+	Hero * Deffender = newHero("Donkey Kong", 50, 75, 120);
+
+
+	Hero * Mage = newHero("Karroch", 140, 35, 80);
+
+
+	printHero(Warrior);
+	printHero(Deffender);
+	printHero(Mage);
+
+	system("pause");
+	return 0;
+
+}
+
+void printHero(Hero * hero) {
+
+
+
+	printf("Name: %s \n", hero->heroName);
+	printf("HP: %d\n", hero->HP);
+	printf("Attack: %d\n", hero->ATT);
+	printf("Deffence: %d\n", hero->DEF);
+	puts("");
+
+
+}
