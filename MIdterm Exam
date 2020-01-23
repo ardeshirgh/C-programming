@@ -1,0 +1,182 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+
+typedef struct Hero Hero;
+void midTerm();
+void menu();
+
+typedef struct Hero {
+
+	char name[10];
+	int HP;
+	double ATT;
+	double DEF;
+	double Skill;
+
+}Hero;
+
+int main() {
+
+	menu();
+			
+	system("pause");
+    	return 0;
+}
+
+
+void midTerm() {
+
+	char HeroName[20];
+	Hero firstName;
+	int total, point, HP, ATT, DEF = 0;
+	int wired;
+
+	
+	
+	
+
+	
+	puts("enter the name of your Hero");
+	scanf("%s", &HeroName);
+	strcpy(firstName.name, HeroName);
+	puts("You have 150 points to Distribute between your Hero HP, ATT and DEF\n");
+	puts("Please insert your hero's HP");
+	scanf("%d", &HP);
+	total = HP;
+
+
+	if (HP > 150) {
+		puts("the Number that you insert is invalid please insert a valid number\n");
+		midTerm();
+	}
+	
+	else if (HP < 0) {
+		puts("the Number that you insert is invalid please insert a valid number\n");
+		midTerm();
+
+	}
+	else {
+		point = 150 - total;
+
+		printf("Your HP is %d, and you still have %d to distribute\n", HP, point);
+
+		puts("Please insert your Hero's ATT\n");
+		scanf("%d", &ATT);
+		total = HP + ATT;
+
+
+		if (ATT > 150) {
+			puts("the Number that you insert is invalid please insert a valid number\n");
+			midTerm();
+		}
+	
+		else if (total == 150) {
+			puts("You spend all your points but still you need DEF try again please\n");
+			midTerm();
+		}
+		else if (ATT < 0) {
+			puts("the Number that you insert is invalid please insert a valid number\n");
+			midTerm();
+		} else if (total < 0) {
+			puts("the Number that you insert is invalid please insert a valid number\n");
+			midTerm();
+
+		}
+		else if (total > 150) {
+			puts("the Number that you insert is invalid please insert a valid number\n");
+			midTerm();
+		}
+		else {
+
+			point = 150 - total;
+
+			printf("Your HP is %d, and you still have %d to distribute\n", ATT, point);
+			puts("Please insert your Hero's DEF");
+			scanf("%d", &DEF);
+			total = ATT + DEF + HP;
+
+
+			if (DEF > 150) {
+				puts("the Number that you insert is invalid please insert a valid number\n");
+				midTerm();
+			}
+			else if (DEF == 150) {
+				puts("the Number that you insert is invalid please insert a valid number\n");
+				midTerm();
+			}
+			else if (total > 150) {
+				puts("the Number that you insert is invalid please insert a valid number\n");
+				midTerm();
+			}
+
+			 else if (total < 0) {
+			puts("the Number that you insert is invalid please insert a valid number\n");
+			midTerm();
+
+		}
+		
+			else if (DEF < 0) {
+				puts("the Number that you insert is invalid please insert a valid number\n");
+				midTerm();
+
+			} 		if (total < 150) {
+				printf("You didn't use all of your Point do you want to try again ?\n");
+				printf("1- Try again\n");
+				printf("2- continue\n");
+				scanf("%d", &wired);
+
+				switch (wired)
+				{
+				case 1:
+					midTerm();
+					menu();
+					break;
+				case 2:
+					printf("your Hero %s has:\n", HeroName);
+					printf("%d HP\n", HP);
+					printf("%d ATT\n", ATT);
+					printf("%d DEF\n", DEF);
+				default:
+					break;
+				}
+			}
+			else {
+
+				printf("You have used all your points\n");
+				printf("your Hero %s has:\n", HeroName);
+				printf("%d HP\n", HP);
+				printf("%d ATT\n", ATT);
+				printf("%d DEF\n", DEF);
+
+
+			}
+		}
+	}
+}
+
+void menu() {
+
+	int userInput;
+
+	puts("Press 1  to create your Hero");
+	puts("press 0 to exit");
+	scanf("%d", &userInput);
+
+	switch (userInput)
+	{
+	case 1:
+		midTerm();
+		menu();
+
+		break;
+
+	case 0:
+		printf("Bye\n");
+
+	default:
+		break;
+	}
+}
+
+	
