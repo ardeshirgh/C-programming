@@ -1,0 +1,20 @@
+#include "pch.h" // This is a Standard Header File, it will help our solution to integrate all of our files
+#include <iostream> // This is the Basic input/output library, like the <stdio.h> on C
+#include <vector>
+#include <cstring>
+#include <cctype>
+
+using namespace std;
+int main() {
+char Name[20]{};
+cout << "Please type your name" << endl;
+cin >> Name;
+for (size_t i = 0; i < strlen(Name); i++)
+{
+if (isalpha(Name[i])) {
+Name[i] = toupper(Name[i]);
+}
+}
+cout << "That is your name, on Uppercase: " << Name << endl;
+system("pause");
+}
