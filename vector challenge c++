@@ -1,0 +1,37 @@
+
+#include <iostream> // This is the Basic input/output library, like the <stdio.h> on C
+#include <vector>
+using namespace std;
+int main() {
+	//2D Vectors
+	vector <int> vector1;
+	vector <int> vector2;
+	vector1.push_back(10);
+	vector1.push_back(20);
+	cout << "This is Vector 1" << endl;
+	cout << vector1.at(0) << endl;
+	cout << vector1.at(1) << endl;
+	vector2.push_back(100);
+	vector2.push_back(200);
+	cout << "This is Vector 2" << endl;
+	cout << vector2.at(0) << endl;
+	cout << vector2.at(1) << endl;
+	vector <vector<int>> vector2D;
+	vector2D.push_back(vector1);
+	vector2D.push_back(vector2);
+	cout << "This is the vector2D element 0" << endl;
+	cout << vector2D.at(0).at(0) << endl;
+	cout << vector2D.at(0).at(1) << endl;
+	cout << "This is the vector2D element 1" << endl;
+	cout << vector2D.at(1).at(0) << endl;
+	cout << vector2D.at(1).at(1) << endl;
+	//changing the vector1 inside vector2D
+	vector2D.at(0).at(0) = 1000;
+	cout << "this is the element 0 of Vector 1 changed inside of Vector2D" << endl;
+	cout << vector2D.at(0).at(0) << endl;;
+	cout << "This is the element 0 inside Vector 1" << endl;
+	cout << vector1.at(0) << endl;
+	//The vector1 inside of vector2D is just a copy, if you want to change both values you need to create a vector of pointers, then change the value of what you're pointing to
+	// We will see how to do this in future classes 
+	system("pause");
+}
