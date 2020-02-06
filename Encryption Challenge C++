@@ -1,0 +1,61 @@
+#include "pch.h" // This is a Standard Header File, it will help our solution to integrate all of our files
+#include <iostream> // This is the Basic input/output library, like the <stdio.h> on C
+#include <vector>
+#include <cstring>
+#include <cctype>
+#include <string>
+
+
+using namespace std;
+int main() {
+
+string alphabet{ "abcdefghijklmnopqrstuvxwyz" };
+string key { "qwertyuiopasdfghjklzxcvbnm" };
+
+cout << "Please enter your message\n" << endl;
+string userMessage{};
+getline(cin, userMessage);
+cout << "encrypting message..." << endl;
+
+int position{};
+
+for (size_t i = 0; i < userMessage.length(); i++)
+{
+if (isalpha(userMessage.at(i))) {
+position = alphabet.find(userMessage.at(i));
+
+userMessage.at(i) = key.at(position);
+}
+
+}
+
+cout << "This is the ecrypted message\n" << userMessage << endl;
+
+
+// Other way around
+
+cout << "Please enter your encrypted message\n" << endl;
+
+getline(cin, userMessage);
+cout << "decrypting message..." << endl;
+
+
+
+for (size_t i = 0; i < userMessage.length(); i++)
+{
+if (isalpha(userMessage.at(i))) {
+position = key.find(userMessage.at(i));
+
+userMessage.at(i) = alphabet.at(position);
+}
+
+}
+
+cout << "This is the decrypted message\n" << userMessage << endl;
+
+
+
+
+
+system("pause");
+}
